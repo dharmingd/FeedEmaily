@@ -7,7 +7,10 @@ class Header extends Component {
     switch (this.props.auth) {
       case null:
         return (
-          <div className="preloader-wrapper small active">
+          <div
+            className="preloader-wrapper small active"
+            style={{ position: 'absolute', top: '25%', right: '10%' }}
+          >
             <div className="spinner-layer spinner-yellow-only">
               <div className="circle-clipper left">
                 <div className="circle" />
@@ -43,7 +46,7 @@ class Header extends Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper">
+        <div className="nav-wrapper" style={{ marginLeft: '20px' }}>
           <Link
             to={this.props.auth ? '/surveys' : '/'}
             className="brand-logo left"

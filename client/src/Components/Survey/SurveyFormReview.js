@@ -10,7 +10,7 @@ const SurveyFormReview = ({ formValues, onBack, submitSurvey, history }) => {
 
   const formReview = _.map(config, ({ label, name }) => {
     return (
-      <div key={name}>
+      <div key={name} style={{ marginTop: '20px' }}>
         <label>{label}</label>
         <h5>{formValues[name]}</h5>
       </div>
@@ -19,20 +19,22 @@ const SurveyFormReview = ({ formValues, onBack, submitSurvey, history }) => {
 
   return (
     <div style={{ marginLeft: '30%', marginRight: '30%', marginTop: '50px' }}>
-      <h5>Confirm yout values</h5>
+      <h4 className="teal-text text-lighten-3">Confirm your survey details</h4>
       {formReview}
-      <button
-        className="yellow btn-flat darken-3 white-text"
-        onClick={() => onBack()}
-      >
-        Back
-      </button>
-      <button
-        className="green white-text btn-flat right"
-        onClick={() => submitSurvey(formValues, history)}
-      >
-        Send <i className="material-icons right">email</i>
-      </button>
+      <div style={{ marginTop: '20px' }}>
+        <button
+          className="yellow btn-flat darken-3 white-text"
+          onClick={() => onBack()}
+        >
+          Back
+        </button>
+        <button
+          className="green white-text btn-flat right"
+          onClick={() => submitSurvey(formValues, history)}
+        >
+          Send <i className="material-icons right">email</i>
+        </button>
+      </div>
     </div>
   );
 };
